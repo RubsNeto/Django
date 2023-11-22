@@ -6,7 +6,7 @@ from .models import toDoList, Item
 
 def index(response, id):
     ls = toDoList.objects.get(id = id)
-    return HttpResponse("<h1>%s</h1>" %ls.name)
+    return render(response, "main/list.html", {"ls":ls})
 
-def v1(response):
-    return HttpResponse("<h1>Screen 1!</h1>")
+def home(response):
+    return render(response, "main/home.html", {})
