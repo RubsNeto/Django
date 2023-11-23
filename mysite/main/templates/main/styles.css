@@ -1,0 +1,30 @@
+/* static/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para itens completos */
+.complete {
+    color: green;
+    text-decoration: line-through;
+}
+
+/* Estilo para itens incompletos */
+.incomplete {
+    color: red;
+    font-weight: bold;
+}
