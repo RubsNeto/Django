@@ -26,6 +26,15 @@ def index(response, id):
             
             else:
                 print("invalid")
+            
+        elif response.POST.get("deletee"):
+            for item in ls.item_set.all():
+                if response.POST.get("c" + str(item.id)) == "clicked":
+                    dell = item
+                    dell.delete()
+
+
+            
 
     return render(response, "main/list.html", {"ls":ls})
 
