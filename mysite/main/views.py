@@ -31,10 +31,7 @@ def index(response, id):
             for item in ls.item_set.all():
                 if response.POST.get("c" + str(item.id)) == "clicked":
                     dell = item
-                    dell.delete()
-
-
-            
+                    dell.delete()     
 
     return render(response, "main/list.html", {"ls":ls})
 
@@ -56,3 +53,14 @@ def create(response):
     
     return render(response, "main/create.html", {"form":form})
 
+def view(response):
+    ls = toDoList.objects.all()
+    if response.method == "POST":
+        if response.POST.get("deletee"):
+            
+            for name in ls.all():
+                if response.POST.get("c" + str(name.id)) == "clicked":
+                    dell = name
+                    dell.delete()
+
+    return render(response, "main/view.html", {"ls":ls})

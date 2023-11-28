@@ -1,0 +1,42 @@
+{% extends "main/base.html" %}
+{% block title %}View{% endblock %}
+
+{% block content %}
+
+<style>
+    .checkbox-block {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    a {
+        padding-left: 0.7em;
+    }
+</style>
+<form method="post" action="#">
+    {% csrf_token %}
+    {% for name in ls.all %}
+        <div class="checkbox-block">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" value="clicked" name="c{{name.id}}">
+                        <a>{{name.name}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <br></br>
+    <a href="/create">
+        <button type="submit" name="save" value="" class="btn btn-success" href="/create/">Create</button>
+    </a>
+
+    <button type="submit" name="deletee" value="deletee" class="btn btn-danger">Delete</button>
+
+
+</form>
+
+
+{% endblock %}
