@@ -36,6 +36,7 @@ def index(response, id):
     return render(response, "main/list.html", {"ls":ls})
 
 def home(response):
+    response.user
     return render(response, "main/home.html", {})
 
 def create(response):
@@ -70,3 +71,5 @@ def view(response):
                    return HttpResponseRedirect("/%i" %name.id)
 
     return render(response, "main/view.html", {"ls":ls})
+
+
