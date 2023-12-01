@@ -61,6 +61,12 @@ def view(response):
                 if response.POST.get("c" + str(name.id)) == "clicked":
                     dell = name
                     dell.delete()
-
+        
+        elif response.POST.get("Goto"): 
+            print("entrou")
+            for name in ls.all():
+                if response.POST.get("c" + str(name.id)) == "clicked":
+                   print("entrou")
+                   return HttpResponseRedirect("/%i" %name.id)
 
     return render(response, "main/view.html", {"ls":ls})

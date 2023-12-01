@@ -20,7 +20,7 @@
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
-                        <input type="checkbox" value="clicked" name="c {{name.id}}">
+                        <input type="checkbox" value="clicked" name="c{{name.id}}">
                         <a>{{name.name}}</a>
                     </div>
                 </div>
@@ -29,11 +29,8 @@
     {% endfor %}
 
     <br></br>
-    <a href="/create">
-        <button type="submit" name="save" value="" class="btn btn-success" href="/create/">Create</button>
-    </a>
-
-    <button type="submit" name="deletee" value="deletee" class="btn btn-danger">Delete</button>
+    <button type="submit" name="Goto" value="Goto" class="btn btn-primary">Ver Lista</button>
+    <button type="submit" name="deletee" value="deletee" class="btn btn-danger">Deletar Lista</button>
 
 
 </form>
