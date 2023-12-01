@@ -56,11 +56,11 @@ def create(response):
 def view(response):
     ls = toDoList.objects.all()
     if response.method == "POST":
-        if response.POST.get("deletee"):
-            
+        if response.POST.get("deletee"):  
             for name in ls.all():
                 if response.POST.get("c" + str(name.id)) == "clicked":
                     dell = name
                     dell.delete()
+
 
     return render(response, "main/view.html", {"ls":ls})
