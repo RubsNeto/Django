@@ -47,7 +47,6 @@ def create(response):
             n = form.cleaned_data["name"]
             t = toDoList(name=n)
             t.save()
-            response.user.todolist.add(t)
 
             return HttpResponseRedirect("/%i" %t.id)
     else:
